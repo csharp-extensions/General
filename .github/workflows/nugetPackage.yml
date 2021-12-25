@@ -31,6 +31,9 @@ jobs:
           dotnet pack /p:Version="$releaseVersion" /p:RepositoryUrl="https://github.com/csharp-extensions/General" -c Release -o deploy
 
       - name: Publish Nuget Package
+        env: 
+          nugetToken: ${{secrets.NUGET_AUTH_TOKEN}}
+          nugetSource: https://api.nuget.org/v3/index.json
         run: |
           ls -l deploy
-          dotnet nuget push ./deploy/*.nupkg --skip-duplicate --no-symbols true --api-key ${{secrets.NUGET_AUTH_TOKEN}} --source https://api.nuget.org/v3/index.json
+          dotnet nuget push ./deploy/*.nupkg --skip-duplicate --no-symbols true -k $nugetToken --source $nugetSource
