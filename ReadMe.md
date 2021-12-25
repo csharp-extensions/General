@@ -6,4 +6,4 @@
 using CSharpExtensions.OpenSource;
 ```
 
-# # https://www.nuget.org/packages/CSharpExtensions.OpenSource/
+# https://www.nuget.org/packages/CSharpExtensions.OpenSource/
