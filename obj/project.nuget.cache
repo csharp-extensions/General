@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SuJqCQm7h4opTOVp92H17R4KsADnBL/iVsdRFGGeSm5uGR3on0ZDkdQBxTloQpVgzJk2873iyT9JgMFZwtnVKg==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\MyProjects\\csharp-extenstions\\Extensions\\General\\CsharpExtensions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bar\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Bar\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

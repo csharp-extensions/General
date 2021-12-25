@@ -1,0 +1,40 @@
+name: Nuget Package
+on:
+  #   push:
+  #     branches:
+  #       - master
+  #   pull_request:
+  #     types: [closed]
+  #     branches:
+  #       - master
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    name: Update NuGet package
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://api.nuget.org/v3/index.json
+        env:
+          # NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_AUTH_TOKEN}}
+
+      - name: Build solution and generate NuGet package
+        env:
+          releaseVersion: ${{ github.event.release.tag_name }}
+        run: |
+          echo "pack version $releaseVersion"
+          dotnet restore
+          dotnet build -c Release 
+          dotnet pack /p:Version="$releaseVersion" /p:RepositoryUrl="https://github.com/csharp-extensions/General" -c Release -o deploy
+
+      - name: Push generated package to GitHub registry
+        run:
+          dotnet nuget push ./deploy/*.nupkg --skip-duplicate --no-symbols true
