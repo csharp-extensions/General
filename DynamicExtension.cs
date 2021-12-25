@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class DynamicExtension
     {

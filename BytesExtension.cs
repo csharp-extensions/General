@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class BytesExtension
     {

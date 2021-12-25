@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class DictionaryExtensions
     {

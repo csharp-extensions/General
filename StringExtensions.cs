@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Serialization;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class StringExtensions
     {

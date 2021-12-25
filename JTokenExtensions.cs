@@ -2,7 +2,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class JTokenExtensions
     {

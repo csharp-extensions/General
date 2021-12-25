@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class DateTimeExtensions
     {

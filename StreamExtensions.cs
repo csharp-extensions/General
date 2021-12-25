@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class StreamExtension
     {

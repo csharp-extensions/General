@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Text;
 
-namespace CsharpExtensions
+namespace CSharpExtensions.OpenSource
 {
     public static class GenericsExtensions
     {
