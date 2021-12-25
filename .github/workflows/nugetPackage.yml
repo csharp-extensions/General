@@ -18,10 +18,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Setup .NET Core @ Latest
+      - name: Setup .Net
         uses: actions/setup-dotnet@v1
 
-      - name: Build solution and generate NuGet package
+      - name: Build & Packing
         env:
           releaseVersion: ${{ github.event.release.tag_name }}
         run: |
@@ -30,7 +30,7 @@ jobs:
           dotnet build -c Release 
           dotnet pack /p:Version="$releaseVersion" /p:RepositoryUrl="https://github.com/csharp-extensions/General" -c Release -o deploy
 
-      - name: Push generated package to GitHub registry
+      - name: Publish Nuget Package
         run: |
           ls -l deploy
           dotnet nuget push ./deploy/*.nupkg --skip-duplicate --no-symbols true --api-key ${{secrets.NUGET_AUTH_TOKEN}} --source https://api.nuget.org/v3/index.json
